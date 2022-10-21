@@ -79,7 +79,7 @@ export default class Connect4 {
     }
 
     checkForQuit(input) {
-        if (input === 'q' || input === 'Q') {
+        if (input === -48 || input === 16) {
             console.log("\nGoodbye.");
             process.exit(0);
         }
@@ -93,8 +93,8 @@ export default class Connect4 {
 
     playTurn(player, input) {
         let colSelect = input;
-        this.checkForQuit(colSelect);
         colSelect = colSelect.toLowerCase().charCodeAt(0) - 97;
+        this.checkForQuit(colSelect);
         if (this.validInput(colSelect)) {
             this.dropPiece(player, colSelect);
             if (this.checkForWin(colSelect)) {
