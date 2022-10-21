@@ -80,7 +80,7 @@ export default class Connect4 {
 
     checkForQuit(input) {
         if (input === -48 || input === 16) {
-            console.log("Goodbye.");
+            console.log("\nGoodbye.");
             process.exit(0);
         }
     }
