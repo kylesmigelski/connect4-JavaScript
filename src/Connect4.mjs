@@ -117,6 +117,7 @@ export default class Connect4 {
             // If the current player has won, end the game
             if (this.checkForWin(colSelect)) {
                 console.log("Congratulations, " + player + ". You win.");
+                io.close();
                 process.exit(0);
             }
 
