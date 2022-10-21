@@ -1,7 +1,9 @@
 /******************************************
- * 
- * Name
- * 
+ *
+ * Kyle Smigelski
+ * Fall 2022
+ * CIS 343
+ *
  *****************************************/
 
 import { exit } from "process";        // Provides an exit method
@@ -27,11 +29,7 @@ if (myArgs.length >= 1) {
         // The matches will be Strings unless you call parseInt.
         rows = parseInt(matches[1]);
         cols = parseInt(matches[2]);
+        winLength = parseInt(myArgs[1]);
     }
 }
-
-// TODO Handle winLength
-
-// My sample solution uses a Connect4 class.  You can structure your 
-// program in any (reasonable) way you like.  It doesn't have to be OO
 (new Connect4(rows, cols, winLength)).playGame();
