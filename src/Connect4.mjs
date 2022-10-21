@@ -51,8 +51,8 @@ export default class Connect4 {
         }
     }
 
-    validInput(colSelect) {
-        if (colSelect < 0 || colSelect >= this.#numCols || this.isColFull(colSelect)) {
+    validInput(colSelect, input) {
+        if (colSelect < 0 || colSelect >= this.#numCols || this.isColFull(colSelect) || input.length > 1) {
             console.log('Invalid column');
             return false;
         }
@@ -95,7 +95,7 @@ export default class Connect4 {
         let colSelect = input;
         this.checkForQuit(colSelect);
         colSelect = colSelect.toLowerCase().charCodeAt(0) - 97;
-        if (this.validInput(colSelect)) {
+        if (this.validInput(colSelect, input)) {
             this.dropPiece(player, colSelect);
             if (this.checkForWin(colSelect)) {
                 console.log("\nCongratulations, player " + player + ". You win.");
