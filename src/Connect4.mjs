@@ -41,6 +41,7 @@ export default class Connect4 {
         console.log(this.header());
         for (let row = this.#numRows - 1; row >= 0; row--) {
             let rowString = '';
+            // zk This might be a good place to use this.#board[row].forEach()
             for (let col = 0; col < this.#numCols; col++) {
                 if (this.#board[row][col] === -1) {
                     rowString += '.  ';
@@ -170,6 +171,7 @@ export default class Connect4 {
     // Returns the selected column
     getColumn(col) {
         let column = [];
+        // zk This might be a good place to use map()
         for (let i = 0; i < this.#numRows; i++) {
             column.push(this.#board[i][col]);
         }
@@ -186,6 +188,7 @@ export default class Connect4 {
      * @param colSelect
      * @returns {*[][]}
      */
+    // zk Interesting approach.
     getDiags(colSelect){
 
         // Lambda function iterates through the board and returns the diagonal from the current position,
